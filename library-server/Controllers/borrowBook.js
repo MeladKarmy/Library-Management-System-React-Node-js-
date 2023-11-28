@@ -19,7 +19,7 @@ exports.getAllBorowingBooks = asyncHandaler(async (req, res, next) => {
   let user = await feature.query
     .populate({
       path: "ISBN",
-      select: " title author shelfLocation _id",
+      select: " title author shelfLocation",
     })
     .populate({
       path: "userId",
@@ -52,7 +52,7 @@ exports.getAllBooksOverdue = asyncHandaler(async (req, res, next) => {
   let user = await feature.query
     .populate({
       path: "ISBN",
-      select: " title author shelfLocation _id",
+      select: " title author shelfLocation",
     })
     .populate({
       path: "userId",
@@ -84,7 +84,7 @@ exports.getAllBooksReturned = asyncHandaler(async (req, res, next) => {
   let user = await feature.query
     .populate({
       path: "ISBN",
-      select: " title author shelfLocation _id",
+      select: " title author shelfLocation",
     })
     .populate({
       path: "userId",
@@ -117,7 +117,7 @@ exports.getUserBorowingBooks = asyncHandaler(async (req, res, next) => {
   let user = await feature.query
     .populate({
       path: "ISBN",
-      select: " title author shelfLocation _id",
+      select: " title author shelfLocation",
     })
     .populate({
       path: "userId",
@@ -155,7 +155,7 @@ exports.getUserBooksOverdue = asyncHandaler(async (req, res, next) => {
   let user = await feature.query
     .populate({
       path: "ISBN",
-      select: " title author shelfLocation _id",
+      select: " title author shelfLocation",
     })
     .populate({
       path: "userId",
@@ -184,7 +184,7 @@ exports.getUserBooksReturned = asyncHandaler(async (req, res, next) => {
   let user = await feature.query
     .populate({
       path: "ISBN",
-      select: " title author shelfLocation _id",
+      select: " title author shelfLocation",
     })
     .populate({
       path: "userId",
@@ -210,7 +210,7 @@ exports.getAllUserBooks = asyncHandaler(async (req, res, next) => {
   let userBooks = await Borrowing.find({ userId: req.params.id })
     .populate({
       path: "ISBN",
-      select: " title author shelfLocation _id",
+      select: " title author shelfLocation",
     })
     .populate({
       path: "userId",
@@ -236,7 +236,7 @@ exports.getBorrowBook = asyncHandaler(async (req, res, next) => {
     .findById(req.params.id)
     .populate({
       path: "ISBN",
-      select: " title author shelfLocation _id",
+      select: " title author shelfLocation",
     })
     .populate({
       path: "userId",
